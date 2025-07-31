@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brain Matching</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .card {
+        width: 33%;
+        border: 1px solid red;
+        height: 10em;
+        border-radius: 5px;
+        box-shadow: 3px 3px 4px  rgba(0, 0, 0, 0.299)
+      }
+      #main-div {
+        width: 60%;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        height: 99vh;
+        border-radius: 15px;
+      }
+      #ComputerSDisply {
+        border-radius: 7px;
+        width: 15%;
+        height: 10em;
+        border: 1px solid rgb(69, 42, 190);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 3px 3px 4px  rgba(0, 0, 0, 0.299)
+      
+      }
+      .userchoice-div{
+        width: 40%;
+        /* height:; */
+        /* border: 1px solid rgb(44, 81, 183); */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        
+      }
+      .imageContainer{
+        margin-top: 4%;
+        gap: 4%;
+        width: 100%;
+        /* border: 1px solid rgb(25, 141, 219); */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+      }
+      img{
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main-div">
+      <div id="ComputerSDisply"></div>
+
+      <div class="userchoice-div">
+        <div class="imageContainer">
+          <div id="card1" class="card">a<img src="" alt="" /></div>
+          <div id="card2" class="card">b<img src="" alt="" /></div>
+          <div id="card3" class="card">c<img src="" alt="" /></div>
+        </div>
+        <div class="imageContainer">
+          <div id="card4" class="card">d<img src="" alt="" /></div>
+          <div id="card5" class="card">e<img src="" alt="" /></div>
+          <div id="card6" class="card">f<img src="" alt="" /></div>
+        </div>
+        <div class="imageContainer">
+          <div id="card7" class="card">g<img src="" alt="" /></div>
+          <div id="card8" class="card">h<img src="" alt="" /></div>
+          <div id="card9" class="card">i<img src="" alt="" /></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const card1 = document.getElementById('card1') 
+      
+      const card2 = document.getElementById('card2') 
+      
+      const card3 = document.getElementById('card3') 
+      
+      const card4 = document.getElementById('card4') 
+      
+      const card5 = document.getElementById('card5') 
+      let randomNumber = Math.floor(Math.random() * 10) + 1;
+      let userChoice;
+      let computerchoice;
+      const ComputerSDisplydiv = document.getElementById("ComputerSDisply");
+      console.log(randomNumber);
+      function computerchosing() {
+        if (randomNumber === 1) {
+          computerchoice = 'A'
+          ComputerSDisplydiv.innerHTML = computerchoice;
+        } else if (randomNumber === 2) {
+          computercho = 'B'
+          ComputerSDisplydiv.innerHTML = `B`;
+        } else if (randomNumber === 3) {
+          computerchoice = 'C'
+          ComputerSDisplydiv.innerHTML = `C`;
+        } else if (randomNumber === 4) {
+          computerchoice = 'D'
+          ComputerSDisplydiv.innerHTML = `D`;
+        } else if (randomNumber === 5) {
+          computerchoice = 'E'
+          ComputerSDisplydiv.innerHTML = `E`;
+        } else if (randomNumber === 6) {
+          computerchoice = 'F'
+          ComputerSDisplydiv.innerHTML = `F`;
+        } else if (randomNumber === 7) {
+          computerchoice = 'G'
+          ComputerSDisplydiv.innerHTML = `G`;
+        } else if (randomNumber === 8) {
+          computerchoice = 'H'
+          ComputerSDisplydiv.innerHTML = `H`;
+        } else if (randomNumber === 9) {
+          computerchoice = 'I'
+          ComputerSDisplydiv.innerHTML = `I`;
+        } else {
+          computerchoice = 'J'
+          ComputerSDisplydiv.innerHTML = `J`;
+        }
+      }
+
+      computerchosing();
+    </script>
+  </body>
+</html>

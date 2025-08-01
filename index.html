@@ -21,13 +21,13 @@
         border: 1px solid red;
         height: 10em;
         border-radius: 5px;
-        box-shadow: 3px 3px 4px  rgba(0, 0, 0, 0.299)
+        box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.299);
       }
       #main-div {
         width: 60%;
         border: 1px solid black;
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 99vh;
@@ -41,10 +41,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 3px 3px 4px  rgba(0, 0, 0, 0.299)
-      
+        box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.299);
       }
-      .userchoice-div{
+      .userchoice-div {
         width: 40%;
         /* height:; */
         /* border: 1px solid rgb(44, 81, 183); */
@@ -52,9 +51,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        
       }
-      .imageContainer{
+      .imageContainer {
         margin-top: 4%;
         gap: 4%;
         width: 100%;
@@ -62,85 +60,309 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
       }
-      img{
+      img {
         background-color: red;
       }
     </style>
   </head>
   <body>
     <div id="main-div">
+      <div id="result"></div>
       <div id="ComputerSDisply"></div>
 
       <div class="userchoice-div">
         <div class="imageContainer">
-          <div id="card1" class="card">a<img src="" alt="" /></div>
-          <div id="card2" class="card">b<img src="" alt="" /></div>
-          <div id="card3" class="card">c<img src="" alt="" /></div>
+          <div id="card1" class="card" onclick="computerchosing() "></div>
+        
+          <div id="card2" class="card"></div>
+          <div id="card3" class="card"></div>
         </div>
         <div class="imageContainer">
-          <div id="card4" class="card">d<img src="" alt="" /></div>
-          <div id="card5" class="card">e<img src="" alt="" /></div>
-          <div id="card6" class="card">f<img src="" alt="" /></div>
+          <div id="card4" class="card"></div>
+          <div id="card5" class="card"></div>
+          <div id="card6" class="card"></div>
         </div>
         <div class="imageContainer">
-          <div id="card7" class="card">g<img src="" alt="" /></div>
-          <div id="card8" class="card">h<img src="" alt="" /></div>
-          <div id="card9" class="card">i<img src="" alt="" /></div>
+          <div id="card7" class="card"></div>
+          <div id="card8" class="card"></div>
+          <div id="card9" class="card"></div>
         </div>
       </div>
     </div>
     <script>
-      const card1 = document.getElementById('card1') 
-      
-      const card2 = document.getElementById('card2') 
-      
-      const card3 = document.getElementById('card3') 
-      
-      const card4 = document.getElementById('card4') 
-      
-      const card5 = document.getElementById('card5') 
-      let randomNumber = Math.floor(Math.random() * 10) + 1;
-      let userChoice;
-      let computerchoice;
-      const ComputerSDisplydiv = document.getElementById("ComputerSDisply");
-      console.log(randomNumber);
+      const card1 = document.getElementById("card1");
+
+      const card2 = document.getElementById("card2");
+
+      const card3 = document.getElementById("card3");
+
+      const card4 = document.getElementById("card4");
+
+      const card5 = document.getElementById("card5");
+      const card6 = document.getElementById("card6");
+      const card7 = document.getElementById("card7");
+      const card8 = document.getElementById("card8");
+      const card9 = document.getElementById("card9");
+      let resultdiv= document.getElementById('result')
+      let image = document.createElement("img");
+
       function computerchosing() {
+        let randomNumber = Math.floor(Math.random() * 10) + 1;
+        // let randomNumber = Math.floor(Math.random() * 10) + 1;
+        let userChoice;
+        let result;
+        let computerchoice;
+        let playerChoice;
+        
+        let countTime = 0;
+        const ComputerSDisplydiv = document.getElementById("ComputerSDisply");
+        console.log(randomNumber);
+        
         if (randomNumber === 1) {
-          computerchoice = 'A'
-          ComputerSDisplydiv.innerHTML = computerchoice;
+          image.src = "card 8.png";
+          image.style.width = "100%";
+          image.style.height = "100%";
+
+          ComputerSDisplydiv.append(image);
+          computerchoice = "A";
         } else if (randomNumber === 2) {
-          computercho = 'B'
-          ComputerSDisplydiv.innerHTML = `B`;
+          
+          image.src = "card9.png";
+          image.style.width = "100%";
+          image.style.height = "100%";
+          ComputerSDisplydiv.append(image);
+
+          computerchoice = "B";
         } else if (randomNumber === 3) {
-          computerchoice = 'C'
-          ComputerSDisplydiv.innerHTML = `C`;
+          image.src = "k card.png";
+          image.style.width = "100%";
+          image.style.height = "100%";
+  
+          ComputerSDisplydiv.append(image);
+
+          computerchoice = "C";
         } else if (randomNumber === 4) {
-          computerchoice = 'D'
-          ComputerSDisplydiv.innerHTML = `D`;
+         
+          image.src = "card 3.png";
+          image.style.width = "100%";
+          image.style.height = "100%"
+          ComputerSDisplydiv.append(image);
+
+          computerchoice = "D";
+        
         } else if (randomNumber === 5) {
-          computerchoice = 'E'
-          ComputerSDisplydiv.innerHTML = `E`;
+           image.src = "card 10.png";
+          image.style.width = "100%";
+          image.style.height = "100%";
+          ComputerSDisplydiv.append(image);
+          computerchoice = "E";
         } else if (randomNumber === 6) {
-          computerchoice = 'F'
-          ComputerSDisplydiv.innerHTML = `F`;
+
+          image.src = "card2.png";
+          image.style.width = "100%";
+          image.style.height = "100%";
+          ComputerSDisplydiv.append(image);
+          computerchoice = "F";
         } else if (randomNumber === 7) {
-          computerchoice = 'G'
-          ComputerSDisplydiv.innerHTML = `G`;
+
+          image.src = "cardJ.png";
+          image.style.width = "100%";
+          image.style.height = "100%";
+          ComputerSDisplydiv.append(image);
+          computerchoice = "G";
         } else if (randomNumber === 8) {
-          computerchoice = 'H'
-          ComputerSDisplydiv.innerHTML = `H`;
+          image.src = "cardQ.png";
+          image.style.width = "100%";
+          image.style.height = "100%";
+          ComputerSDisplydiv.append(image);
+
+  
+          computerchoice = "H";
         } else if (randomNumber === 9) {
-          computerchoice = 'I'
-          ComputerSDisplydiv.innerHTML = `I`;
+          image.src = "card4.png";
+          image.style.width = "100%";
+          image.style.height = "100%";
+          ComputerSDisplydiv.append(image);
+          computerchoice = "I";
         } else {
-          computerchoice = 'J'
-          ComputerSDisplydiv.innerHTML = `J`;
+
+          image.src = "card A.png";
+          image.style.width = "100%";
+          image.style.height = "100%";
+          ComputerSDisplydiv.append(image);
+          computerchoice = "J";
+         
+        }
+        console.log(randomNumber, computerchoice);
+
+        // declaration();
+      }
+
+      setInterval(computerchosing , 5000);
+     
+
+      
+      function declaration(computerchoice) {
+        if (computerchoice !== "A") {
+          
+          image.src = "card 8.png";
+          image.style.width = "100%";
+          image.style.width = "100%";
+          card1.append(image);
+          console.log(result);
+
+          result = "you  wone";
+
+          resultdiv.textContent = result;
+          console.log(computerchoice)
+        } else {
+        
+          result = " you lose ";
+          resultdiv.textContent = result;
+          resultdiv.style.color = "red"
+          resultdiv.style.padding = "1.5% 2.5%"
+          console.log(result);
+          console.log(computerchoice)
+        }
+      }
+      function declaration2(computerchoice) {
+        if (computerchoice !== "B") {
+           image.src = "card9.png";
+          image.style.width = "100%";
+          image.style.width = "100%";
+          card1.appendChild(image);
+          result = "you  wone";
+          console.log(result);
+          console.log(computerchoice)
+        } else {
+          result = " you lose";
+          console.log(result);
+        }
+        console.log(computerchoice)
+      }
+
+      function declaration3(computerchoice) {
+        if (computerchoice !== "C") {
+          image.src = "k card.png";
+          image.style.width = "100%";
+          image.style.width = "100%";
+          card3.appendChild(image);
+          result = "you  wone";
+          console.log(result);
+          console.log(computerchoice)
+
+        } else {
+          image.src = "k card.png";
+          image.style.width = "100%";
+          image.style.width = "100%";
+         
+          card3.appendChild(image);
+          result = " you lose";
+          console.log(result);
         }
       }
 
-      computerchosing();
+      function declaration4(computerchoice) {
+        if (computerchoice === "D") {
+
+          image.src = "card9.png";
+          image.style.width = "100%";
+          image.style.width = "100%";
+          card1.innerHTML = "A";
+          card1.appendChild(image);
+          result = "you  wone"
+          console.log(result);
+          resultdiv.innerHTML = result
+          resultdiv.style.color = 'green'
+        } else {
+          result = " you lose";
+          console.log(result);
+        }
+      }
+      function declaration5(computerchoice) {
+        if (computerchoice === "E") {
+
+          image.src = "card 10.png";
+          image.style.width = "100%";
+          image.style.width = "100%";
+          card5.appendChild(image);
+          result = "you  wone";
+          console.log(result);
+        } else {
+          
+          result = " you lose";
+          console.log(result);
+        }
+      }
+
+      function declaration6(computerchoice) {
+        if (computerchoice === "F") {
+         image.src = "card2.png";
+          image.style.width = "100%";
+          image.style.width = "100%";
+          card6.appendChild(image);
+          result = "you  wone";
+          console.log(result);
+        } else {
+          result = " you lose";
+          console.log(result);
+        }
+      }
+
+      function declaration7(computerchoice) {
+        if (computerchoice === "G") {
+
+         image.src = "cardJ.png";
+          image.style.width = "100%";
+          image.style.width = "100%";
+          card7.appendChild(image);
+          result = "you  wone";
+          console.log(result);
+        } else {
+          result = " you lose";
+          console.log(result);
+        }
+      }
+
+      function declaration8(computerchoice) {
+        if (computerchoice === "H") {
+          image.src = "cardQ.png";
+          image.style.width = "100%";
+          image.style.width = "100%"
+          card8.appendChild(image);
+          result = "you  wone";
+          console.log(result);
+        } else {
+          result = " you lose";
+          console.log(result);
+        }
+      }
+
+      function declaration9(computerchoice) {
+        if (computerchoice === "I") {
+          image.src = "card4.png";
+          image.style.width = "100%";
+          image.style.width = "100%"
+          card9.append(image);
+          result = "you  wone";
+          console.log(result);
+        } else {
+          result = " you lose";
+          console.log(result);
+        }
+      }
+      
+      card1.addEventListener("click", declaration);
+      card2.addEventListener("click", declaration2);
+      card3.addEventListener("click", declaration3);
+      card4.addEventListener("click", declaration4);
+      card5.addEventListener("click", declaration5);
+      card6.addEventListener("click", declaration6);
+      card7.addEventListener("click", declaration7);
+      card8.addEventListener("click", declaration8);
+      card9.addEventListener("click", declaration9);
+     
     </script>
   </body>
 </html>
